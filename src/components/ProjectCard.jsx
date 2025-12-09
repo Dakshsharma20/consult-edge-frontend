@@ -1,4 +1,11 @@
 export default function ProjectCard({ project }) {
+  
+  // --- IMAGE URL FIX ---
+  const src =
+    project.imageUrl && project.imageUrl.startsWith("http")
+      ? project.imageUrl
+      : `${import.meta.env.VITE_API_URL || "http://localhost:5000"}${project.imageUrl}`;
+
   return (
     <div
       className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg 
@@ -8,7 +15,7 @@ export default function ProjectCard({ project }) {
       {/* Image */}
       <div className="h-48 w-full overflow-hidden">
         <img
-          src={project.imageUrl || "/placeholder.png"}
+          src={src || "/placeholder.png"}
           alt={project.name}
           className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
         />

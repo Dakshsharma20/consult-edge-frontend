@@ -1,4 +1,11 @@
 export default function ClientCard({ client }) {
+
+  // --- IMAGE URL FIX ---
+  const src =
+    client.imageUrl && client.imageUrl.startsWith("http")
+      ? client.imageUrl
+      : `${import.meta.env.VITE_API_URL || "http://localhost:5000"}${client.imageUrl}`;
+
   return (
     <div
       className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg 
@@ -8,7 +15,7 @@ export default function ClientCard({ client }) {
       {/* Avatar */}
       <div className="flex items-center space-x-4">
         <img
-          src={client.imageUrl || "/avatar.png"}
+          src={src || "/avatar.png"}
           alt={client.name}
           className="h-16 w-16 rounded-full object-cover shadow-md border border-gray-300"
         />
