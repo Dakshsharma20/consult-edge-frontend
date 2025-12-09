@@ -27,29 +27,29 @@ export default function ContactForm({ compact }) {
         placeholder="Full Name"
         value={form.fullName}
         onChange={(e) => setForm({ ...form, fullName: e.target.value })}
-        className="w-full px-3 py-2 border rounded"
+        className="w-full px-3 py-2 border rounded text-black"
       />
       <input
         required
         placeholder="Email"
         value={form.email}
         onChange={(e) => setForm({ ...form, email: e.target.value })}
-        className="w-full px-3 py-2 border rounded"
+        className="w-full px-3 py-2 border rounded text-black"
       />
       <input
         placeholder="Mobile"
         value={form.mobile}
         onChange={(e) => setForm({ ...form, mobile: e.target.value })}
-        className="w-full px-3 py-2 border rounded"
+        className="w-full px-3 py-2 border rounded text-black"
       />
       <input
         placeholder="City"
         value={form.city}
         onChange={(e) => setForm({ ...form, city: e.target.value })}
-        className="w-full px-3 py-2 border rounded"
+        className="w-full px-3 py-2 border rounded text-black"
       />
 
-      <button className="bg-blue-600 text-white px-4 py-2 rounded">
+      <button className="bg-blue-600 text-black px-4 py-2 rounded bg-white">
         Submit
       </button>
     </form>
